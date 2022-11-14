@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Invoke updateFiles effector using curl
         env:
-          AMP_PASSWORD: $
+          AMP_PASSWORD: ${{ secrets.AMP_PASSWORD }}
         run: |
-          curl -k -u admin:$ -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' http://13.48.177.134/v1/applications/h4tuvc33pk/entities/b4s16v6tg1/effectors/updateFiles
+          curl -k -u admin:"$AMP_PASSWORD" -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' http://13.48.177.134/v1/applications/h4tuvc33pk/entities/b4s16v6tg1/effectors/updateFiles
           
